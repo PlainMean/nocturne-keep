@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#080b18" />
+    <meta name="description" content="Nocturne Keep — a tiny pixel-art gothic action platformer." />
+    <title>Nocturne Keep — Pixel Action</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="masthead">
+        <div>
+          <p class="kicker">PIXEL ACTION · VERTICAL SLICE</p>
+          <h1>Nocturne Keep</h1>
+        </div>
+        <p class="status-note">A hall of ash and moonlight</p>
+      </header>
+
+      <section class="screen-wrap" aria-label="Nocturne Keep game screen">
+        <canvas id="game-canvas" width="480" height="270" tabindex="0" aria-label="Playable Nocturne Keep canvas"></canvas>
+        <p id="load-status" class="load-status">Calling the night...</p>
+      </section>
+
+      <section class="touch-controls" aria-label="Touch controls">
+        <button type="button" class="touch-button direction" data-control="left" aria-label="Move left">◀</button>
+        <button type="button" class="touch-button direction" data-control="right" aria-label="Move right">▶</button>
+        <button type="button" class="touch-button action" data-control="jump" aria-label="Jump">JUMP</button>
+        <button type="button" class="touch-button attack" data-control="attack" aria-label="Whip attack">WHIP</button>
+      </section>
+
+      <footer class="instructions">
+        <span><b>A / D</b> or <b>← / →</b> move</span>
+        <span><b>SPACE</b> jump</span>
+        <span><b>X / J</b> whip</span>
+        <span><b>R</b> restart</span>
+      </footer>
+    </main>
+    <script type="module" src="./game/main.js"></script>
+  </body>
+</html>

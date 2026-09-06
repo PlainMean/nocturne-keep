@@ -1,0 +1,1108 @@
+{
+  "aggregate_sha256": "a88c2c9f7d933a242f64a6410cb9b6cc26040a066c7e4f0fc2746560822b48c4",
+  "asset_count": 110,
+  "assets": [
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Hand-authored ASCII vampire-hunter style reference",
+      "file": "hero_reference.png",
+      "height": 48,
+      "name": "hero_reference",
+      "sha256": "01da95a9fbe3db9539b5feb430350ec1a8b22ac198fc62dde8da980b95b8231f",
+      "width": 32
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Idle neutral, coat and whip hand settled",
+      "file": "hero_idle_0.png",
+      "height": 48,
+      "name": "hero_idle_0",
+      "sha256": "0fda549caba23378629d7b45da484734e5174e7e4487e4515da5808505d25e96",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Idle inhale, shoulders open and coat tail lifts",
+      "file": "hero_idle_1.png",
+      "height": 48,
+      "name": "hero_idle_1",
+      "sha256": "af9d7617edd2a1b7dabcd1682e9a52b577c6cdb7780157a02678177bdaec95eb",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Idle exhale, hair and coat tail settle",
+      "file": "hero_idle_2.png",
+      "height": 48,
+      "name": "hero_idle_2",
+      "sha256": "e4c270d6df89b4c36e74cef2d46048f8b0732613fce191c26435c4d4ebfbb35e",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Idle weight shift, rear hand and cape move",
+      "file": "hero_idle_3.png",
+      "height": 48,
+      "name": "hero_idle_3",
+      "sha256": "edd1d8202dea4e0de21dc38490b80964dcbae19d812ec345c5b70ace73218d29",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Walk contact A: forward heel and opposed arms",
+      "file": "hero_walk_0.png",
+      "height": 48,
+      "name": "hero_walk_0",
+      "sha256": "3c590ad4c8a338619d06ddad8452c24b1616e0134c29e41af26796c610d1b63a",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Walk recoil A: body down, knees absorb impact",
+      "file": "hero_walk_1.png",
+      "height": 48,
+      "name": "hero_walk_1",
+      "sha256": "a909801110f2cc16b6d6e97b8b3f674a531bc454bc52b69e148580f1a806d8df",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Walk passing A: rear foot lifts under hips",
+      "file": "hero_walk_2.png",
+      "height": 48,
+      "name": "hero_walk_2",
+      "sha256": "5799f433a94ffdb88c05712376f884b4853ace71b06166d5c71b4f430898ff8d",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Walk contact B: legs and arms reverse",
+      "file": "hero_walk_3.png",
+      "height": 48,
+      "name": "hero_walk_3",
+      "sha256": "98b646d0158d3fadb701087ed4f29f06f5efd49f173239a029cfcbb472d957f7",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Walk recoil B: opposite knee compresses",
+      "file": "hero_walk_4.png",
+      "height": 48,
+      "name": "hero_walk_4",
+      "sha256": "c93b779b7b8797687d2888cbc420ba8447ea5395c3053c9067bd166efb5f7977",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Walk passing B: opposite rear foot lifts",
+      "file": "hero_walk_5.png",
+      "height": 48,
+      "name": "hero_walk_5",
+      "sha256": "57c5e58457bee7b825cdfb70d34541e827e5e84aa834386fec968fdb893f1163",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Whip ready: low guard with chain behind",
+      "file": "hero_attack_0.png",
+      "height": 48,
+      "name": "hero_attack_0",
+      "sha256": "4ddb94c67f111db38db60ace3cff17de572776dadd3d1be395e89f278470e6a0",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Whip wind-up: torso twists and arm rises",
+      "file": "hero_attack_1.png",
+      "height": 48,
+      "name": "hero_attack_1",
+      "sha256": "9dc9ee922254d0a6f9654384a18d0a3bb0c689c51cc1de70a452e21a418d8511",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Whip cast: shoulder drives forward",
+      "file": "hero_attack_2.png",
+      "height": 48,
+      "name": "hero_attack_2",
+      "sha256": "fedd256f9e5cca0d73fa3780f626bb6a62e99f4b03d86a373849e87f516cd9d1",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Whip extension: chain reaches full horizontal arc",
+      "file": "hero_attack_3.png",
+      "height": 48,
+      "name": "hero_attack_3",
+      "sha256": "e88eb2f1b2a17bc711e4dc5656398c319fd2555726d8fd8daa844c445568e28e",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Whip crack: tip descends and knees brace",
+      "file": "hero_attack_4.png",
+      "height": 48,
+      "name": "hero_attack_4",
+      "sha256": "4d43f67330566b8aaf5558672418bef9c02f0860aef1cc3f448bc86bae75f49c",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Whip recovery: arm and chain sweep low",
+      "file": "hero_attack_5.png",
+      "height": 48,
+      "name": "hero_attack_5",
+      "sha256": "caaa232925da77a16c562a0391d96f3204217210efdf7d391273f6358d99c017",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Low defensive crouch with compressed silhouette",
+      "file": "hero_crouch.png",
+      "height": 48,
+      "name": "hero_crouch",
+      "sha256": "2be88a66d4b9eb53114c2f8420d61e3069e44c60d43a09ee25876f87d9bfffec",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Airborne tuck with readable bent legs",
+      "file": "hero_airborne.png",
+      "height": 48,
+      "name": "hero_airborne",
+      "sha256": "5f642541e95131b0a89bf77aa3fe273afdd05f680ac1d106bcae992ecd4970a8",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "hero",
+      "description": "Backward hit reaction with flared coat",
+      "file": "hero_hurt.png",
+      "height": 48,
+      "name": "hero_hurt",
+      "sha256": "e456661315685b5032ce32cafcd208f859826afbf9aa622b59da2daad66d05e3",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Stooped castle servant reaching with torn sleeves",
+      "file": "enemy_zombie.png",
+      "height": 40,
+      "name": "enemy_zombie",
+      "sha256": "23ecfdba93ac512a889600b9a7a03b46f612b1445092231bb0173728903940e8",
+      "width": 32
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Tall skeleton with separated rib cage and limbs",
+      "file": "enemy_skeleton.png",
+      "height": 40,
+      "name": "enemy_skeleton",
+      "sha256": "0abcec0b3e14228414beb92ded22533db0b2db92438be1bc9a14e1d3448c6fb4",
+      "width": 32
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Bat flight upstroke",
+      "file": "enemy_bat_0.png",
+      "height": 24,
+      "name": "enemy_bat_0",
+      "sha256": "8a07f184f8722035e3fcd7539d083eb0e34dfc2e3c05fb52edfd5cc5c03de95e",
+      "width": 32
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Bat flight downstroke",
+      "file": "enemy_bat_1.png",
+      "height": 24,
+      "name": "enemy_bat_1",
+      "sha256": "2df6a926cbcfbec7d662b5d7576b71c94adc4a9bde809302fe00ed9f616ecb37",
+      "width": 32
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Floating gorgon head with snake halo",
+      "file": "enemy_medusa_head.png",
+      "height": 24,
+      "name": "enemy_medusa_head",
+      "sha256": "363472213ef287ba8c33bac71e7a9b93c3f3370cd52d4b6e70200d1d917b467c",
+      "width": 28
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Moonlit specter with tapering vapor tail",
+      "file": "enemy_ghost.png",
+      "height": 32,
+      "name": "enemy_ghost",
+      "sha256": "4a814d3b6268e4c11f1f4ac1e22962130e55d6247c8e7d0b8d88c031cbd740d1",
+      "width": 32
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Raven in a broad angular wing pose",
+      "file": "enemy_raven.png",
+      "height": 24,
+      "name": "enemy_raven",
+      "sha256": "a959df5475b6949d4f958be52531152e2f1e9eea97dbbb071a9ae60ca32bbbb2",
+      "width": 28
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Crimson plate knight carrying a broad axe",
+      "file": "enemy_axe_knight.png",
+      "height": 40,
+      "name": "enemy_axe_knight",
+      "sha256": "ef223a8d390630184a3f583ca2b5ba19a10d2c72d5da970c699f25a24d8770c6",
+      "width": 40
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Compact crouched leaper with long hands",
+      "file": "enemy_fleaman.png",
+      "height": 24,
+      "name": "enemy_fleaman",
+      "sha256": "066c5c23d1163a354a7cd6b9bfb010250fd24c51a453d4ba2184302a8b423f1d",
+      "width": 24
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Hooded hunched servant with forward weight",
+      "file": "enemy_hunchback.png",
+      "height": 32,
+      "name": "enemy_hunchback",
+      "sha256": "8956de3e8d2860640d075bdec27ff1df7c010b1fb9f67f5d14c258e4c5314336",
+      "width": 32
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Long-limbed wolf creature with claw silhouette",
+      "file": "enemy_werewolf.png",
+      "height": 36,
+      "name": "enemy_werewolf",
+      "sha256": "0298913c130e68fd25ede3a36f58d5458b0e5866fa1c4078c409293fa4a95fd1",
+      "width": 36
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Shielded skeleton with a two-pixel spear",
+      "file": "enemy_bone_knight.png",
+      "height": 40,
+      "name": "enemy_bone_knight",
+      "sha256": "4e81f7fe9b0400bf16c7147e3472ef76cb2a74d51227c5ff5d63611e1c1fcb78",
+      "width": 40
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Large layered-wing bat miniboss",
+      "file": "enemy_giant_bat.png",
+      "height": 32,
+      "name": "enemy_giant_bat",
+      "sha256": "9d7f00f3dd5ce82ae89293e4502ad07c9372c083d91391a7edb81d52a9766119",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Horned stone gargoyle with folded wings",
+      "file": "enemy_gargoyle.png",
+      "height": 36,
+      "name": "enemy_gargoyle",
+      "sha256": "2728d6b88a05ab075325a2b91d3cf22e5303346f476f3d811d6f67a6d3ae5d0f",
+      "width": 36
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Scaled aquatic soldier holding a trident",
+      "file": "enemy_merman.png",
+      "height": 36,
+      "name": "enemy_merman",
+      "sha256": "88ca54797c671b962c6797d11783ca11dd4c61fff5600a19bf9b8717c7679009",
+      "width": 32
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Heavy gold-trimmed castle armor",
+      "file": "enemy_armor_lord.png",
+      "height": 44,
+      "name": "enemy_armor_lord",
+      "sha256": "7d552dad36e532bf2e556ae0e85d79acb031a20098f2d1e65b22a3932c553597",
+      "width": 40
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Low quadruped war beast in a running silhouette",
+      "file": "enemy_warg.png",
+      "height": 28,
+      "name": "enemy_warg",
+      "sha256": "89595a75788cd56550b8860b3f2377e5753182029811e550160db37e68a940ad",
+      "width": 40
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Empty hood and ragged supernatural cloak",
+      "file": "enemy_phantom.png",
+      "height": 40,
+      "name": "enemy_phantom",
+      "sha256": "5f9b71e3cad0a94fed1d9aacd99ee9f6ef117e86c3f60641b261df661c9a1bd4",
+      "width": 32
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Winged demon with a readable airborne pose",
+      "file": "enemy_succubus.png",
+      "height": 40,
+      "name": "enemy_succubus",
+      "sha256": "b021b3ef4cd92cc2362c429226522975bfab702b89a7991baf895e31cefb1cb6",
+      "width": 40
+    },
+    {
+      "alpha": "sprite",
+      "category": "enemies",
+      "description": "Cloaked reaper with a broad crescent scythe",
+      "file": "enemy_reaper.png",
+      "height": 48,
+      "name": "enemy_reaper",
+      "sha256": "4d348b3202a7cb7498315751a5ae4a7c3bdee4f574ed8e39305256c8f7b30189",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Floor candle with wax drips and warm flame",
+      "file": "prop_candle.png",
+      "height": 24,
+      "name": "prop_candle",
+      "sha256": "ae1614a13c41f28c64e98553aad78323bab8406c77d6e68746ad7ab239c2faf6",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Three-flame gothic standing candelabrum",
+      "file": "prop_candelabrum.png",
+      "height": 32,
+      "name": "prop_candelabrum",
+      "sha256": "a62b05c75d53bf92515568c14bb544a7b20c4d59912ec85c60bc29b73f852556",
+      "width": 24
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Wrought-iron wall candle bracket",
+      "file": "prop_wall_sconce.png",
+      "height": 20,
+      "name": "prop_wall_sconce",
+      "sha256": "802bbe9be94f34421b3bbb3e80a07ac3cf883082a734c591526de74af6ffc4e5",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Wall torch with layered flame and iron cradle",
+      "file": "prop_torch.png",
+      "height": 24,
+      "name": "prop_torch",
+      "sha256": "ba01222649bdebc09c4a11de5ef9194917c05d37081399d86d13bbe43309424f",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Stone fire bowl on a short pedestal",
+      "file": "prop_brazier.png",
+      "height": 24,
+      "name": "prop_brazier",
+      "sha256": "b7eb1289ab8602bab12d99d10b4d17a3db52a03cebf3dba1627bad8624dac03c",
+      "width": 24
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Pointed portcullis gate section",
+      "file": "prop_iron_gate.png",
+      "height": 40,
+      "name": "prop_iron_gate",
+      "sha256": "0297c240cf0fec4bde31fccbb6ab6924aebdad1bd10f33903fa048a1ce949a55",
+      "width": 32
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Weathered crouching gargoyle statue",
+      "file": "prop_gargoyle_statue.png",
+      "height": 32,
+      "name": "prop_gargoyle_statue",
+      "sha256": "fa237bd4863ff969431d288fcc905b417891f896991faeea09df069432f3882b",
+      "width": 24
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Carved upright knight sarcophagus",
+      "file": "prop_sarcophagus.png",
+      "height": 40,
+      "name": "prop_sarcophagus",
+      "sha256": "7be46ff8ecd544592aeb1676a8050b72285c7cadcd8d596e0629a336dd78c785",
+      "width": 24
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Iron-bound breakable oak crate",
+      "file": "prop_crate.png",
+      "height": 20,
+      "name": "prop_crate",
+      "sha256": "354a1eb4a1a4cdf98b4bf2d5b2b5944ed534f9ecc7bf9b45b8d2a938c08c727a",
+      "width": 20
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Hooped old oak barrel",
+      "file": "prop_barrel.png",
+      "height": 24,
+      "name": "prop_barrel",
+      "sha256": "03fd24ffb441c5f095d6271d40195228896958fd6551d8c6c7c0a4d8e66520dc",
+      "width": 20
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Heavy linked hanging chain",
+      "file": "prop_hanging_chain.png",
+      "height": 32,
+      "name": "prop_hanging_chain",
+      "sha256": "2ccb10b6665100dfed9edcf742a602fcd8ef3348119bd45dd301229f9d4a45c9",
+      "width": 12
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Torn crimson heraldic banner",
+      "file": "prop_banner.png",
+      "height": 36,
+      "name": "prop_banner",
+      "sha256": "cb2bd1f1312395213a1504058f367eaa172659762e74e99f4cc38907aa7a6f2d",
+      "width": 20
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Gothic bookcase filled with uneven tomes",
+      "file": "prop_bookshelf.png",
+      "height": 40,
+      "name": "prop_bookshelf",
+      "sha256": "be3741a2116ebdc3d62b0efc97a00bab79b3d2ae28b0230165fb39ef12bf015e",
+      "width": 32
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Stone altar with gold reliquary",
+      "file": "prop_altar.png",
+      "height": 24,
+      "name": "prop_altar",
+      "sha256": "6eecb56c3f8a62bd4dd08ee78fc982504725c5289e1182d40aa1c7baf5df1cd3",
+      "width": 32
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Closed tapered wooden coffin",
+      "file": "prop_coffin.png",
+      "height": 40,
+      "name": "prop_coffin",
+      "sha256": "9fb49a2a98b2ac40adf27a6de248a161eb226819c7a8ec07bc79035715ba012c",
+      "width": 24
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Hanging iron chandelier with four candles",
+      "file": "prop_chandelier.png",
+      "height": 24,
+      "name": "prop_chandelier",
+      "sha256": "0b80e01131d0bf8f285d85a224cea9d779142eb197aad1a8f2b97eeb82e2be76",
+      "width": 40
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "Cracked masonry secret-wall block",
+      "file": "prop_breakable_wall.png",
+      "height": 32,
+      "name": "prop_breakable_wall",
+      "sha256": "20fcb3b677bddd4c99a0377fc108586b65505377d5cb5daff0e147c1cb372ca0",
+      "width": 32
+    },
+    {
+      "alpha": "sprite",
+      "category": "props",
+      "description": "High-backed worn gothic throne",
+      "file": "prop_throne.png",
+      "height": 40,
+      "name": "prop_throne",
+      "sha256": "855d986bde1bbeb71ae529a37234eca6311ae2d7e0514d81aba3f80a35a04f17",
+      "width": 28
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Silver throwing dagger",
+      "file": "sub_dagger.png",
+      "height": 16,
+      "name": "sub_dagger",
+      "sha256": "5b99925493b4f2583e090622d5b43a3fae1fbe1dac195936556439f3dc95def9",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Broad crescent throwing axe",
+      "file": "sub_axe.png",
+      "height": 16,
+      "name": "sub_axe",
+      "sha256": "7ffd2c4a3cdb7ac432a05069fddc793fec5ac036cc26c254b3085d111704e98c",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Blue holy-water vial",
+      "file": "sub_holy_water.png",
+      "height": 18,
+      "name": "sub_holy_water",
+      "sha256": "7402535aa332ff9ef255ec3463212dabf090ddb74520f31b21ef8fdbb5e5a6ca",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Gold returning cross",
+      "file": "sub_cross.png",
+      "height": 16,
+      "name": "sub_cross",
+      "sha256": "b96e112be48746abcc73d71f88d065e059d805218e00c4c0ae117483abfc7632",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Moon-silver stopwatch",
+      "file": "sub_stopwatch.png",
+      "height": 18,
+      "name": "sub_stopwatch",
+      "sha256": "c4226b339ac2a13fc2befe78626ae9aaeb268f0c1b0eeb290c8c0bd1534159b4",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Gold-clasped crimson scripture",
+      "file": "sub_bible.png",
+      "height": 18,
+      "name": "sub_bible",
+      "sha256": "849767e8557d275588fc3740431899f60eaf24745be51546c648c7b9f8b91392",
+      "width": 20
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Small crimson heart",
+      "file": "pickup_heart_small.png",
+      "height": 16,
+      "name": "pickup_heart_small",
+      "sha256": "971f32eae7204c25df4e1b38f89054d53fd3579ac11dfc1dbb780c776e8f2d7c",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Large highlighted heart",
+      "file": "pickup_heart_big.png",
+      "height": 16,
+      "name": "pickup_heart_big",
+      "sha256": "1feb24d27aab9c35562ba6dbd8eb719fdaed698e182965d490562c40823ccd06",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Wall meat with bone",
+      "file": "pickup_meat.png",
+      "height": 16,
+      "name": "pickup_meat",
+      "sha256": "1f7e37e91563a921847330bd61b34f4ace9032d9b12b0dabaa513f3ab6956284",
+      "width": 18
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Stacked gold coin bag",
+      "file": "pickup_gold.png",
+      "height": 16,
+      "name": "pickup_gold",
+      "sha256": "0fa7fbfda5e1611003af56a335e2a8aa8a5219166e29ce985a5a56c0117a7c61",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Crimson health potion",
+      "file": "pickup_potion_red.png",
+      "height": 20,
+      "name": "pickup_potion_red",
+      "sha256": "6b6787312027e2c9e4e6157fcfdb3a01c90b9ecca6b45fc7e4bfe9aa3a8a24e6",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Teal magic potion",
+      "file": "pickup_potion_blue.png",
+      "height": 20,
+      "name": "pickup_potion_blue",
+      "sha256": "76756d2cb43acd89432b9a0d2101b716edc79f7b1c2d06493b698f81b798472e",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Coiled chain-whip upgrade",
+      "file": "pickup_whip_upgrade.png",
+      "height": 18,
+      "name": "pickup_whip_upgrade",
+      "sha256": "1668383b077cf0987097fe7a8115108da6e4fd464019624ceed7122ff22d9c5c",
+      "width": 20
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Silver breastplate pickup",
+      "file": "pickup_armor.png",
+      "height": 20,
+      "name": "pickup_armor",
+      "sha256": "52f01706f9344eff4a89a0e6ef92fbfd0d55b5cef64ff3374481d79bc65d900e",
+      "width": 18
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Protective gold rosary",
+      "file": "pickup_rosary.png",
+      "height": 18,
+      "name": "pickup_rosary",
+      "sha256": "a28c4173bdc27fc40a40a82f63cf85856137144dafda4f16b95943614f1619a4",
+      "width": 18
+    },
+    {
+      "alpha": "sprite",
+      "category": "items",
+      "description": "Luminous teal mana crystal",
+      "file": "pickup_mana.png",
+      "height": 18,
+      "name": "pickup_mana",
+      "sha256": "d18438270ca32070334df6d3315c77ea1a14d07e8492b1d95bc3b6af6b215888",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Seamless worn limestone floor",
+      "file": "tile_stone_floor.png",
+      "height": 16,
+      "name": "tile_stone_floor",
+      "sha256": "3e8b55531855f1ed0fdb1a33a4d3fd670e3dcffaeddf49afb09c0a5f5cfa8efb",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Seamless cracked floor variant",
+      "file": "tile_stone_floor_cracked.png",
+      "height": 16,
+      "name": "tile_stone_floor_cracked",
+      "sha256": "e03c3a5eb16cda2652d2e63af2fb878345330eb53bc0d894a4b38517e68253fb",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Seamless old red castle brick",
+      "file": "tile_brick_wall.png",
+      "height": 16,
+      "name": "tile_brick_wall",
+      "sha256": "2fdd13e89f1a6845a41d4855051c227a65dce8cb72fe175137a43d9b52fa7fc5",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Moss-weathered brick variant",
+      "file": "tile_brick_wall_moss.png",
+      "height": 16,
+      "name": "tile_brick_wall_moss",
+      "sha256": "e374232289a726074caa32517a2c38b1906bd37fd58136fef449bf4b53dcac23",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Deep-shadow cobblestone",
+      "file": "tile_cobble.png",
+      "height": 16,
+      "name": "tile_cobble",
+      "sha256": "cebbc171fd7eb73bc2fe5558e202e9cfeb2f4d7afa25fb59eecd91e61247ac41",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Carved stone platform edge",
+      "file": "tile_platform.png",
+      "height": 16,
+      "name": "tile_platform",
+      "sha256": "73cf0eba98a2320572462f5aab56753c3ffe1a2e346de74da3b86a8492343d51",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Side-view stone stair repeat",
+      "file": "tile_stairs.png",
+      "height": 16,
+      "name": "tile_stairs",
+      "sha256": "6194176fbfd639a5d004efd7d4854dacee00f8c353c46a7bd464793b1831485f",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Heavy square pier module",
+      "file": "tile_pillar.png",
+      "height": 32,
+      "name": "tile_pillar",
+      "sha256": "47e364e1ec51c2dd6f6b82acd6e85df3eacfb40c2c7ae8905d2f624a25c51221",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Fluted gothic column module",
+      "file": "tile_column.png",
+      "height": 32,
+      "name": "tile_column",
+      "sha256": "3480c7463e3c483cb02a24695832a8403f344a849a3a7517e4eb285a5eba07af",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Left half of pointed arch module",
+      "file": "tile_arch_left.png",
+      "height": 16,
+      "name": "tile_arch_left",
+      "sha256": "6e8845deafa997c99f81011f8d31b2e3b6019aa38cbacfa60816858396dba1e1",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Right half of pointed arch module",
+      "file": "tile_arch_right.png",
+      "height": 16,
+      "name": "tile_arch_right",
+      "sha256": "d82971bde20149b62750c2eef130661043a13dc8291226abe6c73cf549be6e1e",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Pointed arch apex and tracery module",
+      "file": "tile_arch_keystone.png",
+      "height": 16,
+      "name": "tile_arch_keystone",
+      "sha256": "29723b7e1282062ce40030ef526121e095e6be31eddfce94ed9dd1c345e5b821",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Narrow pointed moonlit lancet",
+      "file": "tile_lancet_window.png",
+      "height": 32,
+      "name": "tile_lancet_window",
+      "sha256": "fb4a1859c20ba3e468d2dd0ca6d943bad35b7a9fdb5c743260488f84c33439fd",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Radial stained-glass rose window",
+      "file": "tile_rose_window.png",
+      "height": 32,
+      "name": "tile_rose_window",
+      "sha256": "6ff3a2db38bfc07b7a36ed2abb4f620ef4454b4f2d462ec1d65b9d78ccac3f3e",
+      "width": 32
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Pointed oak castle door",
+      "file": "tile_door.png",
+      "height": 32,
+      "name": "tile_door",
+      "sha256": "eb4e7973b6750f1a30aa5aca0327109e75fb18464c10882db86d7df6f33fe20d",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Carved quatrefoil wall trim",
+      "file": "tile_trim.png",
+      "height": 16,
+      "name": "tile_trim",
+      "sha256": "5d14ed9c2ed9781a85a77731978bb9e2695b264dbacd04e2aa12fe240342bd85",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "tiles",
+      "description": "Open gothic balcony railing",
+      "file": "tile_balcony.png",
+      "height": 16,
+      "name": "tile_balcony",
+      "sha256": "59d797a34c79ccdbc43846ad1238c1b141d8262fd5ee4f0e0f11711d335ede2e",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "tiles",
+      "description": "Stone-set iron floor spikes",
+      "file": "tile_spikes.png",
+      "height": 16,
+      "name": "tile_spikes",
+      "sha256": "178bc92a75208a37a8c6756547545f65f7255ce7142e89cd688a3268d0287bc3",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "tiles",
+      "description": "Repeatable two-pixel chain",
+      "file": "tile_chain.png",
+      "height": 16,
+      "name": "tile_chain",
+      "sha256": "08f1618acd9f0ce2780afd94bbf266040748ec6a7cfafee1344445f473aae7ee",
+      "width": 8
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Slate castle roof repeat",
+      "file": "tile_roof.png",
+      "height": 16,
+      "name": "tile_roof",
+      "sha256": "63f072483d29890f45f009f87f7c92ac41aca71946ea0fa4d1ff80c43a70b42c",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "tiles",
+      "description": "Open iron portcullis repeat",
+      "file": "tile_portcullis.png",
+      "height": 32,
+      "name": "tile_portcullis",
+      "sha256": "846f16a2dfe73c9e01084bac30717ab88ffae4801e88a6503cd11e1e85e4ecb8",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "tiles",
+      "description": "Mossy creeping vine overlay",
+      "file": "tile_vine.png",
+      "height": 16,
+      "name": "tile_vine",
+      "sha256": "2e541e620cdcb4d1511df1f1f8a41284e709834f2802d76529c42e460791e825",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "tiles",
+      "description": "Loose masonry floor rubble",
+      "file": "tile_rubble.png",
+      "height": 16,
+      "name": "tile_rubble",
+      "sha256": "4bb56c514cefc454683963bed1d7fbe912730852ecd0db2c60d3b90a47e2782a",
+      "width": 16
+    },
+    {
+      "alpha": "opaque",
+      "category": "tiles",
+      "description": "Shadowed ribbed ceiling edge",
+      "file": "tile_ceiling.png",
+      "height": 16,
+      "name": "tile_ceiling",
+      "sha256": "72273a313817f4ae5b71e1c5f6ad578c89fcc7303bf5aad6fc66d02e7945ea87",
+      "width": 16
+    },
+    {
+      "alpha": "sprite",
+      "category": "ui",
+      "description": "Crescent moon with crater clusters",
+      "file": "bg_moon.png",
+      "height": 32,
+      "name": "bg_moon",
+      "sha256": "8671989539dcacfcd90997d10be320e1338a760cf6d2456f7b54553dbb153c9e",
+      "width": 32
+    },
+    {
+      "alpha": "sprite",
+      "category": "ui",
+      "description": "Layered moonlit cloud bank",
+      "file": "bg_cloud.png",
+      "height": 20,
+      "name": "bg_cloud",
+      "sha256": "e6a43b044b345aeb68b320bc1af501518ba5ce031d5796141f5f65f716a8fa9a",
+      "width": 48
+    },
+    {
+      "alpha": "sprite",
+      "category": "ui",
+      "description": "Distant spired castle silhouette",
+      "file": "bg_castle_silhouette.png",
+      "height": 48,
+      "name": "bg_castle_silhouette",
+      "sha256": "6ac84a5aeda93f8225ddb14f48f2c490e081786117d2de015889edf962b0a16d",
+      "width": 96
+    },
+    {
+      "alpha": "sprite",
+      "category": "ui",
+      "description": "Ornate gold-and-stone frame corner",
+      "file": "ui_corner.png",
+      "height": 8,
+      "name": "ui_corner",
+      "sha256": "5026cdcaac9e107985b86df89a160c02a6048332bc31cf45b10d984c38e64e7f",
+      "width": 8
+    },
+    {
+      "alpha": "sprite",
+      "category": "ui",
+      "description": "Repeatable horizontal UI frame edge",
+      "file": "ui_edge_horizontal.png",
+      "height": 8,
+      "name": "ui_edge_horizontal",
+      "sha256": "371a88cbe80c386b644066b514929f15365a30c6900f07ca54ec0e93aea443aa",
+      "width": 8
+    },
+    {
+      "alpha": "sprite",
+      "category": "ui",
+      "description": "Repeatable vertical UI frame edge",
+      "file": "ui_edge_vertical.png",
+      "height": 8,
+      "name": "ui_edge_vertical",
+      "sha256": "b27a9e0a4fd58e5837f8413489609daa024d46fa0aa13cbf5ae8cc9c8caa031e",
+      "width": 8
+    },
+    {
+      "alpha": "sprite",
+      "category": "ui",
+      "description": "Filled health heart",
+      "file": "ui_heart_full.png",
+      "height": 8,
+      "name": "ui_heart_full",
+      "sha256": "60c0244997a6157c0e2c63fe0c69a4c1caeff87c302d6b7a555f4ae85dc87d09",
+      "width": 8
+    },
+    {
+      "alpha": "sprite",
+      "category": "ui",
+      "description": "Empty health heart outline",
+      "file": "ui_heart_empty.png",
+      "height": 8,
+      "name": "ui_heart_empty",
+      "sha256": "709dcc21676133d132c9a3f7b986f99ff5855023600d53a7524a2501a341a994",
+      "width": 8
+    },
+    {
+      "alpha": "opaque",
+      "category": "ui",
+      "description": "Segmented crimson player-health bar",
+      "file": "ui_hp_bar.png",
+      "height": 10,
+      "name": "ui_hp_bar",
+      "sha256": "a8e4117accb96317692f8e843d393d62156f48cc752d20b4fc6180ae1a1b14c6",
+      "width": 96
+    },
+    {
+      "alpha": "opaque",
+      "category": "ui",
+      "description": "Segmented teal magic bar",
+      "file": "ui_mana_bar.png",
+      "height": 10,
+      "name": "ui_mana_bar",
+      "sha256": "d316f3f4b752de340cae380502c6de7233c82362c4e90abef563ce85cacdfe16",
+      "width": 96
+    },
+    {
+      "alpha": "sprite",
+      "category": "ui",
+      "description": "Gothic sub-weapon HUD frame",
+      "file": "ui_subweapon_frame.png",
+      "height": 24,
+      "name": "ui_subweapon_frame",
+      "sha256": "f1c7a6daae817a5d9ea3d1d9b590a1e96710fa6169b6b984ea7ca8ec805c423b",
+      "width": 24
+    },
+    {
+      "alpha": "opaque",
+      "category": "ui",
+      "description": "Ornate segmented boss-health bar",
+      "file": "ui_boss_bar.png",
+      "height": 12,
+      "name": "ui_boss_bar",
+      "sha256": "bbc5a69b9133e4296099e18261698007568545aa63fd2c9eaf678e872b652630",
+      "width": 128
+    }
+  ],
+  "palette": "Nocturne Cathedral",
+  "schema": 2
+}

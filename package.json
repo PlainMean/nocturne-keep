@@ -1,0 +1,11 @@
+{
+  "name": "nocturne-keep-pixel-game",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test game/test/*.test.js",
+    "build": "node game/build.mjs",
+    "serve": "python3 -m http.server 4173 --directory dist"
+  }
+}
