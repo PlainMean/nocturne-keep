@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" content="#080b18" />
     <meta name="description" content="Nocturne Keep — a tiny pixel-art gothic action platformer." />
     <title>Nocturne Keep — Pixel Action</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./assets/bg_moon.png" type="image/png" />
   </head>
   <body>
     <main class="game-shell">
@@ -23,18 +24,20 @@
         <p id="load-status" class="load-status">Calling the night...</p>
       </section>
 
+      <p class="orientation-message" role="status" aria-live="polite">
+        Rotate your phone to portrait mode to enter the keep.
+      </p>
+
       <section class="touch-controls" aria-label="Touch controls">
-        <button type="button" class="touch-button direction" data-control="left" aria-label="Move left">◀</button>
-        <button type="button" class="touch-button direction" data-control="right" aria-label="Move right">▶</button>
-        <button type="button" class="touch-button action" data-control="jump" aria-label="Jump">JUMP</button>
-        <button type="button" class="touch-button attack" data-control="attack" aria-label="Whip attack">WHIP</button>
+        <button type="button" class="touch-button direction" data-control="left" aria-label="Move left" aria-keyshortcuts="ArrowLeft A">◀</button>
+        <button type="button" class="touch-button direction" data-control="right" aria-label="Move right" aria-keyshortcuts="ArrowRight D">▶</button>
+        <button type="button" class="touch-button action" data-control="jump" aria-label="Jump" aria-keyshortcuts="Space ArrowUp">JUMP</button>
+        <button type="button" class="touch-button attack" data-control="attack" aria-label="Whip attack" aria-keyshortcuts="X J">WHIP</button>
       </section>
 
       <footer class="instructions">
-        <span><b>A / D</b> or <b>← / →</b> move</span>
-        <span><b>SPACE</b> jump</span>
-        <span><b>X / J</b> whip</span>
-        <span><b>R</b> restart</span>
+        <span class="keyboard-hints"><b>A / D</b> or <b>← / →</b> move · <b>SPACE</b> jump · <b>X / J</b> whip · <b>R</b> restart</span>
+        <span class="mobile-hint">Tap a control to start or restart · move · jump · whip</span>
       </footer>
     </main>
     <script type="module" src="./game/main.js"></script>

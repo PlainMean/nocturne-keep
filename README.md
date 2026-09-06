@@ -106,22 +106,44 @@ npm run serve
 
 Open `http://localhost:4173/`. `npm run build` recreates a self-contained `dist/` directory with relative asset paths; it copies only the generated PNGs required by the game. The server is intentionally plain Python, so no package install or runtime network access is required.
 
+### iPhone 15 / GitHub Pages target
+
+The primary mobile target is an iPhone 15-sized portrait viewport: **393x852 CSS pixels**. The game shell uses `viewport-fit=cover`, safe-area `env()` insets, `100dvh` sizing, a 16:9 canvas, pixelated rendering, and normal-flow controls below the canvas. Portrait play has no horizontal overflow or page scrolling. Narrow landscape phone viewports show a compact “rotate to portrait” message instead of clipping the canvas.
+
+The deployed Pages URL is `https://plainmean.github.io/nocturne-keep/`. The HTML entry point, ES modules, stylesheet, favicon, and generated asset URLs are relative, so the same `dist/` artifact remains valid below that repository subpath without runtime network dependencies. Touch controls are 56px tall, use pointer capture plus pointerup/pointercancel/lost-capture cleanup, and suppress browser scrolling, selection, context menus, and gesture zoom during play.
+
 ### Controls
 
 - **A / D** or **Left / Right** — move
 - **Space** or **Up** — jump
 - **X / J** — whip attack
 - **R / Enter** — restart after a win or loss
-- Large touch buttons are available below the canvas on desktop and portrait mobile.
+- Visible 56px touch buttons start, move, jump, attack, and restart the game without keyboard input.
 
 Defeat the skeleton and bat, collect hearts and gold, then reach the eastern door. The simulation runs at a fixed 60 Hz step and has deterministic enemy patrols, collisions, damage, collectibles, and win/loss transitions.
+
+### Exact mobile verification
+
+```bash
+npm test
+npm run build
+python3 -m http.server 4174 --directory dist
+```
+
+- `npm test`: **8 tests passed** (6 browser-free engine tests plus 2 mobile contract/pointer-input tests).
+- `npm run build`: fresh self-contained `dist/` with **53 generated PNG assets**.
+- Production browser smoke: `http://127.0.0.1:4174/` at **393x852**. The canvas measured **375x210.9375 CSS px**; each touch button measured **88.25x56 CSS px**; document scroll dimensions stayed **393x852**; loading completed; touch start and touch restart both changed the rendered game state; console errors, page errors, and HTTP responses at or above 400 were all **zero**.
+- Landscape check at **852x393** showed the portrait orientation message and kept document scroll dimensions at **852x393**.
+- Static dist scan found no `https://`, `http://`, or absolute-root (`/asset`) runtime URLs. Review screenshot: `game/review/nocturne-keep-iphone15.webp`.
 
 ### Game source layout
 
 - `game/src/engine.js` — deterministic state, physics, collisions, combat, collectibles, and state transitions
 - `game/src/render.js` — crisp nearest-neighbor Canvas renderer and generated-asset loader
-- `game/src/input.js` — keyboard/pointer input normalization
-- `game/src/main.js` — fixed-step browser loop
+- `game/src/input.js` — keyboard/pointer input normalization with multi-pointer cleanup
+- `game/src/main.js` — fixed-step browser loop and browser gesture suppression
+- `game/styles.css` — safe-area-aware responsive layout and portrait/landscape handling
 - `game/test/engine.test.js` — browser-free core simulation tests
+- `game/test/mobile-contract.test.js` — browser-free mobile markup/CSS and pointer lifecycle tests
 - `game/build.mjs` — zero-dependency static build into `dist/`
 - `.github/workflows/pages.yml` — GitHub Pages deployment of `dist/` on pushes to `main` or manual dispatch

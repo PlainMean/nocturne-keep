@@ -3,6 +3,7 @@ import { InputManager } from "./input.js";
 import { createRenderer, drawLoading, loadAssets } from "./render.js";
 
 const canvas = document.querySelector("#game-canvas");
+const gameShell = document.querySelector(".game-shell");
 const loadStatus = document.querySelector("#load-status");
 const context = canvas.getContext("2d", { alpha: false });
 const input = new InputManager(document);
@@ -11,19 +12,51 @@ let renderer = null;
 let accumulator = 0;
 let previousTime = performance.now();
 const FRAME_MS = 1000 / 60;
+const canvasPointers = new Set();
 
-function requestCanvasAction(event) {
-  if (event.type === "pointerdown") {
-    canvas.focus({ preventScroll: true });
-    input.press("start");
-  } else {
-    input.release("start");
+function releaseCanvasPointer(event) {
+  event.preventDefault();
+  if (!Number.isFinite(event.pointerId)) return;
+  canvasPointers.delete(event.pointerId);
+  if (canvas.hasPointerCapture?.(event.pointerId)) {
+    try {
+      canvas.releasePointerCapture(event.pointerId);
+    } catch {
+      // Capture may already have been released by the browser.
+    }
   }
+  if (canvasPointers.size === 0) input.release("start");
 }
 
-canvas.addEventListener("pointerdown", requestCanvasAction, { passive: true });
-canvas.addEventListener("pointerup", requestCanvasAction, { passive: true });
-canvas.addEventListener("pointercancel", requestCanvasAction, { passive: true });
+function requestCanvasAction(event) {
+  event.preventDefault();
+  if (!Number.isFinite(event.pointerId)) return;
+  if (event.type === "pointerdown") {
+    canvas.focus({ preventScroll: true });
+    canvasPointers.add(event.pointerId);
+    input.press("start");
+    try {
+      canvas.setPointerCapture?.(event.pointerId);
+    } catch {
+      // The input manager still handles the action edge.
+    }
+    return;
+  }
+  releaseCanvasPointer(event);
+}
+
+canvas.addEventListener("pointerdown", requestCanvasAction, { passive: false });
+canvas.addEventListener("pointerup", releaseCanvasPointer, { passive: false });
+canvas.addEventListener("pointercancel", releaseCanvasPointer, { passive: false });
+canvas.addEventListener("lostpointercapture", releaseCanvasPointer, { passive: false });
+
+function preventBrowserGesture(event) {
+  if (gameShell.contains(event.target)) event.preventDefault();
+}
+
+for (const eventName of ["contextmenu", "selectstart", "dragstart", "touchmove", "gesturestart", "gesturechange", "gestureend"]) {
+  document.addEventListener(eventName, preventBrowserGesture, { passive: false });
+}
 
 drawLoading(context, "CALLING THE NIGHT...");
 
