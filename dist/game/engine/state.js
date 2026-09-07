@@ -37,7 +37,7 @@ function makeStartingInventory() {
 }
 
 function makeStoryProgress() {
-  return Object.fromEntries(STORY.map((chapter) => [chapter.id, { explored: false, cleared: false }]));
+  return Object.fromEntries(STORY.map((chapter) => [chapter.id, { explored: false, cleared: false, rested: false }]));
 }
 
 export function createGame(seed = DEFAULT_SEED) {
@@ -53,7 +53,7 @@ export function createGame(seed = DEFAULT_SEED) {
     gold: 0,
     totalTurns: 0,
     battle: null,
-    lastBattle: null,
+    pendingBonus: null,
     notice: "The bell waits beyond the rain.",
   };
 }

@@ -35,6 +35,14 @@ function addLog(state, message) {
 function setNotice(state, message) {
   state.notice = message;
 }
+function emit(state, event) {
+  if (!state.battle) return;
+  addLog(state, event.text);
+  state.battle.lastEvent = { kind: event.kind, sourceId: event.sourceId ?? null, targetId: event.targetId ?? null, text: event.text };
+}
+function recordRoundAction(state, actorId, label, kind) {
+  if (state.battle) state.battle.roundActions[actorId] = { label, kind };
+}
 
 function roll(state) {
   const result = nextRandom(state);
@@ -172,6 +180,9 @@ function makeBattle(state, encounter) {
     activeId: null,
     turnIndex: 0,
     turnOrder: [],
+    acted: [],
+    roundActions: {},
+    lastEvent: null,
     log: [encounter.intro],
   };
   state.battle = battle;
@@ -306,6 +317,8 @@ function advanceUntilParty(state) {
       battle.round += 1;
       battle.turnIndex = 0;
       battle.turnOrder = actorEntries(state);
+      battle.acted = [];
+      battle.roundActions = {};
       addLog(state, `Round ${battle.round}. The bell marks another measure.`);
     }
     const id = battle.turnOrder[battle.turnIndex];
@@ -333,8 +346,10 @@ function advanceUntilParty(state) {
 }
 
 function advanceAfterPlayerAction(state) {
+  const battle = state.battle;
+  if (battle && !battle.acted.includes(battle.activeId)) battle.acted.push(battle.activeId);
   state.totalTurns += 1;
-  state.battle.turnIndex += 1;
+  battle.turnIndex += 1;
   return advanceUntilParty(state);
 }
 
@@ -392,12 +407,13 @@ function damageValue(state, source, target, { power = 1, magic = false, accuracy
 
 function describeDamage(state, source, target, result) {
   if (!result.hit) {
-    addLog(state, `${source.name}'s attack misses ${target.name}.`);
+    emit(state, { kind: "miss", sourceId: source.uid ?? source.id, targetId: target.uid ?? target.id, text: `${source.name}'s attack misses ${target.name}.` });
     return false;
   }
   applyRawDamage(state, target, result.damage, "");
   const critical = result.critical ? " Critical!" : "";
-  addLog(state, `${source.name} hits ${target.name} for ${result.damage} damage.${critical}`.trim());
+  const kind = result.critical ? "critical" : "damage";
+  emit(state, { kind, sourceId: source.uid ?? source.id, targetId: target.uid ?? target.id, text: `${source.name} hits ${target.name} for ${result.damage} damage.${critical}`.trim() });
   if (target.hp <= 0) addLog(state, `${target.name} is defeated.`);
   return true;
 }
@@ -406,12 +422,14 @@ function applySkillStatus(state, source, target, skill) {
   const status = skill.status;
   if (!status || roll(state) > (status.chance ?? 1)) return;
   addOrRefreshStatus(target, status);
-  addLog(state, `${target.name} is afflicted with ${status.id}.`);
+  emit(state, { kind: "status", sourceId: source.uid ?? source.id, targetId: target.uid ?? target.id, text: `${target.name} is afflicted with ${status.id}.` });
 }
 
 function resolveSkill(state, source, target, skill) {
+  const sourceRef = source.uid ?? source.id;
+  const targetRef = target.uid ?? target.id;
   if (hasStatus(source, "silenced")) {
-    addLog(state, `${source.name} is silenced and cannot cast ${skill.name}.`);
+    emit(state, { kind: "info", sourceId: sourceRef, text: `${source.name} is silenced and cannot cast ${skill.name}.` });
     return;
   }
   source.mp = Math.max(0, source.mp - skill.cost);
@@ -419,12 +437,12 @@ function resolveSkill(state, source, target, skill) {
     const amount = Math.max(1, Math.floor((32 + source.magic * 1.1) * skill.power));
     const before = target.hp;
     target.hp = Math.min(target.maxHp, target.hp + amount);
-    addLog(state, `${source.name} casts ${skill.name}; ${target.name} recovers ${target.hp - before} HP.`);
+    emit(state, { kind: "heal", sourceId: sourceRef, targetId: targetRef, text: `${source.name} casts ${skill.name}; ${target.name} recovers ${target.hp - before} HP.` });
     return;
   }
   if (skill.kind === "buff") {
     addOrRefreshStatus(target, skill.status);
-    addLog(state, `${source.name} casts ${skill.name} on ${target.name}.`);
+    emit(state, { kind: "buff", sourceId: sourceRef, targetId: targetRef, text: `${source.name} casts ${skill.name} on ${target.name}.` });
     return;
   }
   const result = damageValue(state, source, target, {
@@ -452,25 +470,27 @@ function resolveBasicAttack(state, source, target) {
 
 function resolveItem(state, source, target, item) {
   const effect = item.effect;
+  const sourceRef = source.uid ?? source.id;
+  const targetRef = target.uid ?? target.id;
   state.inventory[item.id] = Math.max(0, (state.inventory[item.id] ?? 0) - 1);
   if (effect.type === "healHp") {
     const before = target.hp;
     target.hp = Math.min(target.maxHp, target.hp + effect.amount);
-    addLog(state, `${source.name} uses ${item.name}; ${target.name} recovers ${target.hp - before} HP.`);
+    emit(state, { kind: "heal", sourceId: sourceRef, targetId: targetRef, text: `${source.name} uses ${item.name}; ${target.name} recovers ${target.hp - before} HP.` });
   } else if (effect.type === "healMp") {
     const before = target.mp;
     target.mp = Math.min(target.maxMp, target.mp + effect.amount);
-    addLog(state, `${source.name} uses ${item.name}; ${target.name} recovers ${target.mp - before} MP.`);
+    emit(state, { kind: "heal", sourceId: sourceRef, targetId: targetRef, text: `${source.name} uses ${item.name}; ${target.name} recovers ${target.mp - before} MP.` });
   } else if (effect.type === "cure") {
     removeStatuses(target, effect.statuses);
-    addLog(state, `${source.name} uses ${item.name}; curses leave ${target.name}.`);
+    emit(state, { kind: "cure", sourceId: sourceRef, targetId: targetRef, text: `${source.name} uses ${item.name}; curses leave ${target.name}.` });
   } else if (effect.type === "revive") {
     target.hp = Math.max(1, Math.floor(target.maxHp * effect.ratio));
     target.statuses = [];
-    addLog(state, `${source.name} uses ${item.name}; ${target.name} rises with ${target.hp} HP.`);
+    emit(state, { kind: "heal", sourceId: sourceRef, targetId: targetRef, text: `${source.name} uses ${item.name}; ${target.name} rises with ${target.hp} HP.` });
   } else if (effect.type === "status") {
     addOrRefreshStatus(target, effect.status);
-    addLog(state, `${source.name} uses ${item.name} on ${target.name}.`);
+    emit(state, { kind: "buff", sourceId: sourceRef, targetId: targetRef, text: `${source.name} uses ${item.name} on ${target.name}.` });
   }
 }
 
@@ -541,14 +561,17 @@ function chooseCommand(state, action) {
   }
   if (command === "defend") {
     actor.defending = true;
-    addLog(state, `${actor.name} defends behind a veil of ash.`);
+    recordRoundAction(state, actor.id, "Defend", "defend");
+    emit(state, { kind: "defend", sourceId: actor.id, text: `${actor.name} defends behind a veil of ash.` });
     return advanceAfterPlayerAction(state);
   }
   if (command === "run") {
     if (battle.boss || roll(state) < 0.42) {
-      addLog(state, `${actor.name} cannot find a path through the dark.`);
+      recordRoundAction(state, actor.id, "Run (failed)", "run");
+      emit(state, { kind: "info", sourceId: actor.id, text: `${actor.name} cannot find a path through the dark.` });
       return advanceAfterPlayerAction(state);
     }
+    recordRoundAction(state, actor.id, "Run", "run");
     addLog(state, `${actor.name} leads the party out of the encounter.`);
     return finishEscape(state);
   }
@@ -584,7 +607,6 @@ function selectItem(state, itemId) {
   battle.menu = "target";
   return state;
 }
-
 function resolveTargetedCommand(state, targetId) {
   const battle = state.battle;
   const pending = battle.pending;
@@ -593,12 +615,17 @@ function resolveTargetedCommand(state, targetId) {
   const target = findActor(state, targetId);
   if (!source || !target) return state;
   if (pending.kind === "attack") {
+    recordRoundAction(state, source.id, `Attack \u2192 ${target.name}`, "attack");
     addLog(state, `${source.name} attacks.`);
     resolveBasicAttack(state, source, target);
   } else if (pending.kind === "skill") {
-    resolveSkill(state, source, target, SKILL_BY_ID[pending.id]);
+    const skill = SKILL_BY_ID[pending.id];
+    recordRoundAction(state, source.id, `${skill.name} \u2192 ${target.name}`, "skill");
+    resolveSkill(state, source, target, skill);
   } else {
-    resolveItem(state, source, target, ITEM_BY_ID[pending.id]);
+    const item = ITEM_BY_ID[pending.id];
+    recordRoundAction(state, source.id, `${item.shortName ?? item.name} \u2192 ${target.name}`, "item");
+    resolveItem(state, source, target, item);
   }
   return advanceAfterPlayerAction(state);
 }
