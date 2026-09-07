@@ -1,0 +1,44 @@
+[
+  {
+    "id": "rowan",
+    "name": "Rowan Vey",
+    "title": "Ash Warden",
+    "role": "warden",
+    "portrait": "rowan",
+    "maxHp": 148,
+    "maxMp": 24,
+    "attack": 28,
+    "magic": 8,
+    "defense": 18,
+    "speed": 12,
+    "skills": ["nightcleave", "veilbreak", "ashen_ward"]
+  },
+  {
+    "id": "selene",
+    "name": "Selene Mourne",
+    "title": "Moon Oracle",
+    "role": "oracle",
+    "portrait": "selene",
+    "maxHp": 104,
+    "maxMp": 66,
+    "attack": 13,
+    "magic": 30,
+    "defense": 10,
+    "speed": 16,
+    "skills": ["moon_mend", "cinder_sigil", "silver_lullaby"]
+  },
+  {
+    "id": "garrick",
+    "name": "Garrick Rook",
+    "title": "Grave Knight",
+    "role": "grave-knight",
+    "portrait": "garrick",
+    "maxHp": 132,
+    "maxMp": 32,
+    "attack": 25,
+    "magic": 12,
+    "defense": 22,
+    "speed": 9,
+    "skills": ["nightcleave", "blood_oath", "ashen_ward"]
+  }
+]

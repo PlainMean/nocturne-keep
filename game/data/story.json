@@ -1,0 +1,32 @@
+[
+  {
+    "id": "keep_gate",
+    "number": "I",
+    "title": "Enter the Keep",
+    "room": "Outer Keep",
+    "encounterId": "gate_guardians",
+    "next": "chapel_crypt",
+    "button": "Enter the iron gate",
+    "text": "The Ashen Bell has rung for thirteen nights. Rowan Vey leads the other two into Nocturne Keep, where every stone is black with old vows."
+  },
+  {
+    "id": "chapel_crypt",
+    "number": "II",
+    "title": "Explore the Chapel Crypt",
+    "room": "Chapel / Crypt",
+    "encounterId": "chapel_shadows",
+    "next": "ashen_bell",
+    "button": "Descend beneath the chapel",
+    "text": "Selene finds a silver map beneath the altar. It points through the chapel floor to a crypt full of moon-starved things—and the stair to the bell tower."
+  },
+  {
+    "id": "ashen_bell",
+    "number": "III",
+    "title": "Confront the Ashen Bell",
+    "room": "Bell Tower",
+    "encounterId": "ashen_bell",
+    "next": null,
+    "button": "Confront the Bellkeeper",
+    "text": "The bellkeeper lifts a scythe made from the rope's shadow. Break his vigil, and dawn may find the keep silent."
+  }
+]

@@ -1,5 +1,7 @@
 {
-  "assetCount": 53,
+  "assetCount": 32,
   "source": "out/manifest.json",
-  "generatedBy": "game/build.mjs"
+  "generatedBy": "game/build.mjs",
+  "runtime": "turn-based-rpg",
+  "runtimeNetworkDependencies": 0
 }

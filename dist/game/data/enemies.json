@@ -1,0 +1,100 @@
+[
+  {
+    "id": "skeleton",
+    "name": "Chapel Skeleton",
+    "art": "skeleton",
+    "maxHp": 84,
+    "attack": 19,
+    "magic": 7,
+    "defense": 9,
+    "speed": 10,
+    "xp": 34,
+    "gold": 12,
+    "ai": [
+      {"kind": "attack", "weight": 72},
+      {"kind": "skill", "skillId": "bone_rattle", "weight": 28}
+    ]
+  },
+  {
+    "id": "bat",
+    "name": "Velvet Bat",
+    "art": "bat",
+    "maxHp": 58,
+    "attack": 16,
+    "magic": 4,
+    "defense": 7,
+    "speed": 19,
+    "xp": 27,
+    "gold": 9,
+    "ai": [
+      {"kind": "attack", "weight": 86},
+      {"kind": "skill", "skillId": "haunt", "weight": 14}
+    ]
+  },
+  {
+    "id": "ghost",
+    "name": "Chapel Ghost",
+    "art": "ghost",
+    "maxHp": 102,
+    "attack": 15,
+    "magic": 18,
+    "defense": 11,
+    "speed": 14,
+    "xp": 52,
+    "gold": 18,
+    "ai": [
+      {"kind": "skill", "skillId": "haunt", "weight": 62},
+      {"kind": "attack", "weight": 38}
+    ]
+  },
+  {
+    "id": "werewolf",
+    "name": "Moonstarved Warg",
+    "art": "werewolf",
+    "maxHp": 150,
+    "attack": 26,
+    "magic": 5,
+    "defense": 15,
+    "speed": 17,
+    "xp": 78,
+    "gold": 31,
+    "ai": [
+      {"kind": "attack", "weight": 68},
+      {"kind": "skill", "skillId": "lupine_howl", "weight": 32}
+    ]
+  },
+  {
+    "id": "medusa",
+    "name": "Crypt Medusa",
+    "art": "medusa",
+    "maxHp": 118,
+    "attack": 17,
+    "magic": 22,
+    "defense": 12,
+    "speed": 12,
+    "xp": 70,
+    "gold": 28,
+    "ai": [
+      {"kind": "skill", "skillId": "petrifying_gaze", "weight": 58},
+      {"kind": "attack", "weight": 42}
+    ]
+  },
+  {
+    "id": "ashen_reaper",
+    "name": "The Ashen Bellkeeper",
+    "art": "reaper",
+    "maxHp": 540,
+    "attack": 31,
+    "magic": 28,
+    "defense": 19,
+    "speed": 18,
+    "xp": 420,
+    "gold": 260,
+    "boss": true,
+    "ai": [
+      {"kind": "skill", "skillId": "bell_toll", "weight": 42},
+      {"kind": "skill", "skillId": "soul_reap", "weight": 35},
+      {"kind": "attack", "weight": 23}
+    ]
+  }
+]

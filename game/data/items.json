@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ember_tonic",
+    "name": "Ember Tonic",
+    "shortName": "Ember Tonic",
+    "target": "ally",
+    "effect": {"type": "healHp", "amount": 48},
+    "description": "Warm red tonic. Restores 48 HP."
+  },
+  {
+    "id": "moonwater",
+    "name": "Moonwater Flask",
+    "shortName": "Moonwater",
+    "target": "ally",
+    "effect": {"type": "healMp", "amount": 22},
+    "description": "Cold water. Restores 22 MP."
+  },
+  {
+    "id": "dusk_bread",
+    "name": "Dusk Bread",
+    "shortName": "Dusk Bread",
+    "target": "ally",
+    "effect": {"type": "healHp", "amount": 92},
+    "description": "Dense chapel bread. Restores 92 HP."
+  },
+  {
+    "id": "grave_salt",
+    "name": "Grave Salt",
+    "shortName": "Grave Salt",
+    "target": "ally",
+    "effect": {"type": "cure", "statuses": ["poison", "burn", "bleed", "shaken", "silenced"]},
+    "description": "Scours curses and lingering wounds."
+  },
+  {
+    "id": "bell_resin",
+    "name": "Bell Resin",
+    "shortName": "Bell Resin",
+    "target": "deadAlly",
+    "effect": {"type": "revive", "ratio": 0.38},
+    "description": "Sticky amber resin. Revives an ally at 38% HP."
+  },
+  {
+    "id": "iron_ash",
+    "name": "Iron Ash",
+    "shortName": "Iron Ash",
+    "target": "ally",
+    "effect": {"type": "status", "status": {"id": "warded", "turns": 3, "power": 0.28}},
+    "description": "A pinch of ash. Reduces incoming damage for 3 turns."
+  },
+  {
+    "id": "oracle_tea",
+    "name": "Oracle Tea",
+    "shortName": "Oracle Tea",
+    "target": "ally",
+    "effect": {"type": "healMp", "amount": 42},
+    "description": "Bitter tea. Restores 42 MP."
+  }
+]

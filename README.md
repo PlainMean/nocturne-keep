@@ -90,9 +90,9 @@ A full build creates exactly 16 files in `sheets/`:
 
 To add an asset: add one `AssetSpec`, implement it in the matching builder module, use palette names only, and run the complete verification block above. Builder/spec mismatches, stale files, wrong dimensions, wrong modes, palette leaks, alpha leaks, nondeterministic bytes, and missing review artifacts all fail validation.
 
-## Playable game vertical slice
+## Playable game: Nocturne Keep — The Ashen Bell
 
-The repository also contains a complete, dependency-free browser game: **Nocturne Keep**. It uses only the generated PNGs in `out/` at runtime and keeps the asset generator/documentation above unchanged.
+The repository contains a framework-free, mobile-first, menu-driven turn-based RPG. It keeps the generated Nocturne Cathedral pixel art, but replaces the action-platformer loop with an original three-hero gothic quest through the keep, chapel crypt, and Ashen Bell tower.
 
 ### Local run
 
@@ -104,46 +104,54 @@ npm run build
 npm run serve
 ```
 
-Open `http://localhost:4173/`. `npm run build` recreates a self-contained `dist/` directory with relative asset paths; it copies only the generated PNGs required by the game. The server is intentionally plain Python, so no package install or runtime network access is required.
+Open `http://127.0.0.1:4173/`. The server is plain Python. `npm run build` creates a self-contained `dist/` tree with relative HTML, ES module, JSON, and generated PNG paths. Runtime code has no CDN, remote font, API, or network dependency.
+
+### Game loop and controls
+
+- **New Game** starts Rowan Vey (Ash Warden), Selene Mourne (Moon Oracle), and Garrick Rook (Grave Knight).
+- Three authored nodes progress through the **Outer Keep**, **Chapel / Crypt**, and **Bell Tower**.
+- Battles use **Attack**, **Skills / Magic**, **Items**, **Defend**, and **Run**, followed by target selection where required.
+- The data catalog contains five regular enemy types plus the Ashen Bellkeeper boss, seven usable items, and eight player/enemy skills.
+- Battles include seeded damage variance, critical hits, enemy AI, MP costs, status effects, guard/defend mitigation, rewards, XP/levels, escape chance, victory, defeat, and a dedicated ending screen.
+- `Continue Saved Game` restores the latest localStorage autosave. Meaningful reducer actions autosave; **Return to Title** clears the active save. Keyboard users can use `1`–`5` for the main battle commands and `Escape` to back out.
+
+### Source layout
+
+- `game/engine/` — deterministic reducer, state/invariants, seeded RNG, save serialization, combat turn resolution.
+- `game/data/*.json` — heroes, enemies, skills, items, encounters, and story dialogue. Content additions do not require engine edits.
+- `game/ui/` — DOM menus, battle log, responsive presentation, local save bridge, and generated-art asset mapping.
+- `game/styles.css` — portrait-first layout, `100dvh`, safe-area insets, pixel presentation, 44px controls, and landscape guidance.
+- `game/build.mjs` — copies the source modules/data and only required files from `out/` into `dist/`.
+- `game/test/engine.test.js` — save round-trip, replay determinism, battle/status/inventory, victory/defeat, and progression checks.
+- `game/test/mobile-contract.test.js` — viewport, accessibility, safe-area, local-path, and data/build contracts.
 
 ### iPhone 15 / GitHub Pages target
 
-The primary mobile target is an iPhone 15-sized portrait viewport: **393x852 CSS pixels**. The game shell uses `viewport-fit=cover`, safe-area `env()` insets, `100dvh` sizing, a 16:9 canvas, pixelated rendering, and normal-flow controls below the canvas. Portrait play has no horizontal overflow or page scrolling. Narrow landscape phone viewports show a compact “rotate to portrait” message instead of clipping the canvas.
+The primary target is **393x852 CSS pixels** in portrait, with 390x844 remaining within the same responsive rules. The document uses `viewport-fit=cover`, safe-area `env()` insets, `100dvh` with a fallback, `overscroll-behavior: none`, `touch-action` gesture suppression, nearest-neighbor generated art, and real keyboard-accessible buttons. Landscape phone viewports hide the game surface and show a portrait guidance state.
 
-The deployed Pages URL is `https://plainmean.github.io/nocturne-keep/`. The HTML entry point, ES modules, stylesheet, favicon, and generated asset URLs are relative, so the same `dist/` artifact remains valid below that repository subpath without runtime network dependencies. Touch controls are 56px tall, use pointer capture plus pointerup/pointercancel/lost-capture cleanup, and suppress browser scrolling, selection, context menus, and gesture zoom during play.
+The built entrypoint and all runtime references are relative, so `dist/` is safe beneath a GitHub Pages repository path. The intended project URL is `https://plainmean.github.io/nocturne-keep/`. No GitHub branch or remote deployment is initialized by this task.
 
-### Controls
+Review screenshot: `game/review/nocturne-keep-rpg-iphone15.webp`.
 
-- **A / D** or **Left / Right** — move
-- **Space** or **Up** — jump
-- **X / J** — whip attack
-- **R / Enter** — restart after a win or loss
-- Visible 56px touch buttons start, move, jump, attack, and restart the game without keyboard input.
+### Verification
 
-Defeat the skeleton and bat, collect hearts and gold, then reach the eastern door. The simulation runs at a fixed 60 Hz step and has deterministic enemy patrols, collisions, damage, collectibles, and win/loss transitions.
-
-### Exact mobile verification
+The exact verification block used for this build:
 
 ```bash
+python3 -m unittest discover -s tests -v
+python3 -m src.validate
+python3 -m src.digest
 npm test
 npm run build
-python3 -m http.server 4174 --directory dist
 ```
 
-- `npm test`: **8 tests passed** (6 browser-free engine tests plus 2 mobile contract/pointer-input tests).
-- `npm run build`: fresh self-contained `dist/` with **53 generated PNG assets**.
-- Production browser smoke: `http://127.0.0.1:4174/` at **393x852**. The canvas measured **375x210.9375 CSS px**; each touch button measured **88.25x56 CSS px**; document scroll dimensions stayed **393x852**; loading completed; touch start and touch restart both changed the rendered game state; console errors, page errors, and HTTP responses at or above 400 were all **zero**.
-- Landscape check at **852x393** showed the portrait orientation message and kept document scroll dimensions at **852x393**.
-- Static dist scan found no `https://`, `http://`, or absolute-root (`/asset`) runtime URLs. Review screenshot: `game/review/nocturne-keep-iphone15.webp`.
+Observed results:
 
-### Game source layout
+- Python regression suite: **16 tests passed**; native validator checked **110 assets and 16 review artifacts**; digest remained `a88c2c9f7d933a242f64a6410cb9b6cc26040a066c7e4f0fc2746560822b48c4`.
+- Node/browser-free suite: **13 tests passed**, zero failures.
+- Build: `dist/` with **32 generated RPG assets**, JSON content, engine modules, UI modules, and `runtimeNetworkDependencies: 0` in `dist/BUILD_INFO.json`.
+- Browser smoke at **393x852**: title, New Game, story exploration, encounter launch, command menu, attack target selection, first-battle victory, reload/Continue Saved Game, and restart were exercised. Document scroll dimensions stayed `393x852`.
+- Landscape smoke at **852x393**: portrait guidance displayed and document dimensions stayed `852x393`.
+- A static scan of `dist/` found no `http://`, `https://`, root-relative `src`/`href`, or root-relative module URLs.
 
-- `game/src/engine.js` — deterministic state, physics, collisions, combat, collectibles, and state transitions
-- `game/src/render.js` — crisp nearest-neighbor Canvas renderer and generated-asset loader
-- `game/src/input.js` — keyboard/pointer input normalization with multi-pointer cleanup
-- `game/src/main.js` — fixed-step browser loop and browser gesture suppression
-- `game/styles.css` — safe-area-aware responsive layout and portrait/landscape handling
-- `game/test/engine.test.js` — browser-free core simulation tests
-- `game/test/mobile-contract.test.js` — browser-free mobile markup/CSS and pointer lifecycle tests
-- `game/build.mjs` — zero-dependency static build into `dist/`
-- `.github/workflows/pages.yml` — GitHub Pages deployment of `dist/` on pushes to `main` or manual dispatch
+Full command output and limitations are recorded in `TURN_BASED_BUILD_REPORT.md`.

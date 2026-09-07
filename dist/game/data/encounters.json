@@ -1,0 +1,27 @@
+[
+  {
+    "id": "gate_guardians",
+    "name": "The Iron Gate",
+    "room": "Outer Keep",
+    "enemies": ["skeleton", "bat"],
+    "intro": "The gate remembers every oath broken beneath it. Two guardians wake in the rain.",
+    "rewardItems": {"ember_tonic": 1, "moonwater": 1}
+  },
+  {
+    "id": "chapel_shadows",
+    "name": "Chapel of Last Light",
+    "room": "Chapel / Crypt",
+    "enemies": ["ghost", "medusa", "werewolf"],
+    "intro": "A drowned hymn rises from the crypt. The moonstarved pack circles the altar.",
+    "rewardItems": {"grave_salt": 1, "iron_ash": 1}
+  },
+  {
+    "id": "ashen_bell",
+    "name": "The Ashen Bell",
+    "room": "Bell Tower",
+    "enemies": ["ashen_reaper"],
+    "boss": true,
+    "intro": "At the bell rope waits the keeper who taught the night to ring.",
+    "rewardItems": {}
+  }
+]

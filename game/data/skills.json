@@ -1,0 +1,141 @@
+[
+  {
+    "id": "nightcleave",
+    "name": "Nightcleave",
+    "kind": "physical",
+    "cost": 0,
+    "target": "enemy",
+    "power": 1.35,
+    "accuracy": 0.97,
+    "description": "A sure-handed crescent of cold iron."
+  },
+  {
+    "id": "moon_mend",
+    "name": "Moon Mend",
+    "kind": "heal",
+    "cost": 5,
+    "target": "ally",
+    "power": 1.15,
+    "description": "Restore an ally beneath a silver sign."
+  },
+  {
+    "id": "cinder_sigil",
+    "name": "Cinder Sigil",
+    "kind": "magic",
+    "element": "fire",
+    "cost": 7,
+    "target": "enemy",
+    "power": 1.62,
+    "accuracy": 0.98,
+    "status": {"id": "burn", "turns": 3, "power": 7, "chance": 0.42},
+    "description": "Moonfire brands a foe and may leave it burning."
+  },
+  {
+    "id": "veilbreak",
+    "name": "Veilbreak",
+    "kind": "break",
+    "cost": 4,
+    "target": "enemy",
+    "power": 0.8,
+    "accuracy": 0.98,
+    "removes": ["guard"],
+    "status": {"id": "shaken", "turns": 2, "power": 0.15, "chance": 1},
+    "description": "Crack a guard and expose the spirit beneath."
+  },
+  {
+    "id": "ashen_ward",
+    "name": "Ashen Ward",
+    "kind": "buff",
+    "cost": 4,
+    "target": "ally",
+    "status": {"id": "warded", "turns": 3, "power": 0.28, "chance": 1},
+    "description": "Wrap an ally in the keep's protective ash."
+  },
+  {
+    "id": "blood_oath",
+    "name": "Blood Oath",
+    "kind": "physical",
+    "cost": 6,
+    "target": "enemy",
+    "power": 1.9,
+    "accuracy": 0.9,
+    "recoil": 8,
+    "status": {"id": "bleed", "turns": 3, "power": 5, "chance": 0.55},
+    "description": "Trade a little life for a grave-deep blow."
+  },
+  {
+    "id": "silver_lullaby",
+    "name": "Silver Lullaby",
+    "kind": "magic",
+    "cost": 9,
+    "target": "enemy",
+    "power": 1.18,
+    "accuracy": 0.94,
+    "status": {"id": "silenced", "turns": 2, "power": 1, "chance": 0.45},
+    "description": "A moonlit refrain that can mute a monster's trick."
+  },
+  {
+    "id": "bone_rattle",
+    "name": "Bone Rattle",
+    "kind": "magic",
+    "cost": 0,
+    "target": "enemy",
+    "power": 0.92,
+    "accuracy": 0.92,
+    "status": {"id": "shaken", "turns": 2, "power": 0.15, "chance": 0.3},
+    "description": "A curse threaded through clattering ribs."
+  },
+  {
+    "id": "haunt",
+    "name": "Haunt",
+    "kind": "magic",
+    "cost": 0,
+    "target": "enemy",
+    "power": 1.05,
+    "accuracy": 0.92,
+    "status": {"id": "poison", "turns": 3, "power": 6, "chance": 0.38},
+    "description": "A cold memory that keeps hurting after contact."
+  },
+  {
+    "id": "lupine_howl",
+    "name": "Lupine Howl",
+    "kind": "buff",
+    "cost": 0,
+    "target": "ally",
+    "status": {"id": "frenzy", "turns": 2, "power": 0.22, "chance": 1},
+    "description": "A hunting cry that drives the pack onward."
+  },
+  {
+    "id": "petrifying_gaze",
+    "name": "Petrifying Gaze",
+    "kind": "magic",
+    "cost": 0,
+    "target": "enemy",
+    "power": 0.78,
+    "accuracy": 0.86,
+    "status": {"id": "petrify", "turns": 1, "power": 1, "chance": 0.24},
+    "description": "A glare that can steal one turn."
+  },
+  {
+    "id": "bell_toll",
+    "name": "Bell Toll",
+    "kind": "magic",
+    "cost": 0,
+    "target": "enemy",
+    "power": 1.28,
+    "accuracy": 0.94,
+    "status": {"id": "burn", "turns": 3, "power": 10, "chance": 0.4},
+    "description": "The Ashen Bell's note wounds every living thing."
+  },
+  {
+    "id": "soul_reap",
+    "name": "Soul Reap",
+    "kind": "physical",
+    "cost": 0,
+    "target": "enemy",
+    "power": 1.7,
+    "accuracy": 0.9,
+    "status": {"id": "bleed", "turns": 3, "power": 9, "chance": 0.5},
+    "description": "A scythe arc that leaves a soul fraying."
+  }
+]
